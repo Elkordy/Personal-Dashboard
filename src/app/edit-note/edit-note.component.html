@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="  edit-wrapper has-blurred-white-bg">
+        <h2 class="is-bold"> Edit Note </h2>
+        <p *ngIf="!note"> Note not found </p>
+        <form #form='ngForm' (ngSubmit)="onFormSubmit(form)" *ngIf="note">
+            <div class="form-field">
+                <input class="textbox" type="text " placeholder="Enter note title..." [ngModel]='note.title' name="title" required #titleField='ngModel'>
+                <span *ngIf="form.invalid && form.submitted" class="error-msg"> Please Enter A Note
+          Title!</span>
+            </div>
+            <div class="form-field">
+                <textarea class="textarea" placeholder="Enter note content..." [ngModel]='note.content' name="content"></textarea>
+
+            </div>
+
+            <div class="btns-containers">
+
+                <a routerLink="../" class="btn"> Cancel </a>
+                <button type="button" class="btn" (click)="onDeleteNote()">Delete</button>
+                <button type="submit" class="btn align-end">Save</button>
+            </div>
+
+        </form>
+    </div>
+</div>

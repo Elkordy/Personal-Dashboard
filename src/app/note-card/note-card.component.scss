@@ -1,0 +1,50 @@
+.note-card {
+    background-color: rgba($color: #000000, $alpha: .5);
+    color: rgba($color: white, $alpha: .85);
+    padding: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .15s;
+    margin-bottom: 15px;
+    &:hover {
+        background-color: rgba($color: #000000, $alpha: .68);
+        backdrop-filter: blur( 2px);
+    }
+}
+
+.note-card-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.note-card-content {
+    margin-top: 7.5px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 390px) {
+    .note-card-title {
+        font-size: 13.5px;
+    }
+    .note-card-content {
+        font-size: 11.5px;
+    }
+}
+
+@media screen and (min-width: 390px) and (max-width: 576px) {
+    .note-card-title {
+        font-size: 14px;
+    }
+    .note-card-content {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .note-card-title {
+        font-size: 15px;
+    }
+    .note-card-content {
+        font-size: 13px;
+    }
+}

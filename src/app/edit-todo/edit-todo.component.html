@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="edit-wrapper has-blurred-white-bg">
+        <h2 class="is-bold"> New Todo </h2>
+        <p *ngIf="!todo"> Note not found </p>
+        <form #form='ngForm' (ngSubmit)="onFormSubmit(form)" *ngIf="todo">
+            <div class="form-field">
+                <input class="textbox" type="text " placeholder="Enter a text..." [ngModel]='todo.text' name="text" required>
+                <span *ngIf="form.invalid && form.submitted" class="error-msg">Please Enter A Text!</span>
+            </div>
+            <div class="btns-containers">
+                <a routerLink="../" class="btn"> Cancel</a>
+                <button type="submit" class="btn align-end">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
